@@ -1,0 +1,1 @@
+"./adc.obj" "./buffer.obj" "./buffer_printf.obj" "./hal_adc.obj" "./hal_uart.obj" "./list.obj" "./main.obj" "./subsystem.obj" "./task.obj" "./timing.obj" "./uart.obj" "../lnk_msp430f5529.cmd" -llibmath.a -llibc.a 
