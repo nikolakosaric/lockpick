@@ -10,8 +10,8 @@
 
 #define FCPU 24000000
 
-#define SUBSYS_UART UART0
-#define SUBSYSTEM_UART UART0
+#define SUBSYS_UART UART1
+#define SUBSYSTEM_UART UART1
 
 // include the library header
 #include "library.h"
@@ -21,9 +21,9 @@
 #define USE_MODULE_SUBSYSTEM
 #define USE_MODULE_BUFFER_PRINTF
 
-#define UART0_TX_BUFFER_LENGTH 512
+#define UART1_TX_BUFFER_LENGTH 512
 
-#define USE_UART0
+#define USE_UART1
 
 #define TASK_MAX_LENGTH 50
 

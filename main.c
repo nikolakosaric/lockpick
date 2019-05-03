@@ -1,4 +1,4 @@
-#include <msp430.h> 
+#include <msp430.h>
 #include <stdint.h>
 #include "project_settings.h"
 #include "hal_adc.h"
@@ -9,7 +9,6 @@
 #include "uart.h"
 #include "hal_general.h"
 
-
 void SetClk24MHz(void);
 void SetVcoreUp (unsigned int level);
 
@@ -19,34 +18,34 @@ void printADCValue2(uint16_t ADCval, void *);
 
 int main(void)
 {
-	WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
+    WDTCTL = WDTPW | WDTHOLD;   // stop watchdog timer
 
-	SetClk24MHz();
+    SetClk24MHz();
 
-	DisableInterrupts();
+    DisableInterrupts();
 
-	//Timing_Init();
-	Task_Init();
-	UART_Init(SUBSYSTEM_UART);
-	ADC_Init();
+    //Timing_Init();
+    Task_Init();
+    UART_Init(SUBSYSTEM_UART);
+    UART_ReconfigureBaud(SUBSYSTEM_UART, 9600);
+    ADC_Init();
     ADC_AddChannel(ADC0, 1000, printADCValue, 0);
-    ADC_AddChannel(ADC1, 1100, printADCValue2, 0);
+    //ADC_AddChannel(ADC1, 1000, printADCValue2, 0);
 
+    EnableInterrupts();
 
-	EnableInterrupts();
-
-	while(1) {
-	    SystemTick();
-	}
+    while(1) {
+        SystemTick();
+    }
 }
 
 void printADCValue(uint16_t ADCval, void * tempPointer) {
-    Subsystem_printf("Channel 0: %f\r\n", (ADCval / 4096.0) *100.0);
+    Subsystem_printf("Channel 0: %f\r\n", ADCval);
 }
-
-void printADCValue2(uint16_t ADCval, void * tempPointer) {
-    Subsystem_printf("Channel 1: %f\r\n", (ADCval / 4096.0) *100.0);
-}
+//
+//void printADCValue2(uint16_t ADCval, void * tempPointer) {
+//    Subsystem_printf("Channel 1: %f\r\n", (ADCval / 4096.0) *100.0);
+//}
 
 void SetClk24MHz(){
     // Increase Vcore setting to level3 to support fsystem=25MHz

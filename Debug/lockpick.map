@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v18.1.2                     
 ******************************************************************************
->> Linked Mon Apr 29 22:00:32 2019
+>> Linked Tue Apr 30 21:57:45 2019
 
 OUTPUT FILE NAME:   <lockpick.out>
-ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00004426
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00004400
 
 
 MEMORY CONFIGURATION
@@ -19,8 +19,8 @@ MEMORY CONFIGURATION
   INFOB                 00001900   00000080  00000000  00000080  RWIX
   INFOA                 00001980   00000080  00000000  00000080  RWIX
   USBRAM                00001c00   00000800  00000000  00000800  RWIX
-  RAM                   00002400   00002000  00000961  0000169f  RWIX
-  FLASH                 00004400   0000bb80  000000ba  0000bac6  RWIX
+  RAM                   00002400   00002000  00000973  0000168d  RWIX
+  FLASH                 00004400   0000bb80  0000009a  0000bae6  RWIX
   INT00                 0000ff80   00000002  00000000  00000002  RWIX
   INT01                 0000ff82   00000002  00000000  00000002  RWIX
   INT02                 0000ff84   00000002  00000000  00000002  RWIX
@@ -85,7 +85,7 @@ MEMORY CONFIGURATION
   INT61                 0000fffa   00000002  00000002  00000000  RWIX
   INT62                 0000fffc   00000002  00000002  00000000  RWIX
   RESET                 0000fffe   00000002  00000002  00000000  RWIX
-  FLASH2                00010000   00014400  00002170  00012290  RWIX
+  FLASH2                00010000   00014400  00001b96  0001286a  RWIX
 
 
 SECTION ALLOCATION MAP
@@ -93,57 +93,57 @@ SECTION ALLOCATION MAP
  output                                  attributes/
 section   page    origin      length       input sections
 --------  ----  ----------  ----------   ----------------
-.bss       0    00002400    000008bc     UNINITIALIZED
+.bss       0    00002400    000008ce     UNINITIALIZED
                   00002400    00000320     (.common:task_list_array)
                   00002720    00000258     (.common:task_list_links)
-                  00002978    00000200     (.common:tx_buffer_array0)
+                  00002978    00000200     (.common:tx_buffer_array1)
                   00002b78    00000060     adc.obj (.bss:channels)
                   00002bd8    00000030     (.common:task_list)
                   00002c08    00000028     adc.obj (.bss:pending_measurements)
-                  00002c30    00000020     (.common:rx_buffer_array0)
-                  00002c50    0000001c     (.common:rx0)
-                  00002c6c    0000001c     (.common:tx0)
-                  00002c88    00000012     (.common:uart)
-                  00002c9a    00000008     (.common:receiverList0)
-                  00002ca2    00000008     (.common:receiver_array0)
-                  00002caa    00000004     adc.obj (.bss)
-                  00002cae    00000004     (.common:idle_task)
-                  00002cb2    00000004     (.common:rollover_time)
-                  00002cb6    00000004     (.common:time_ms)
-                  00002cba    00000001     (.common:error_flags)
-                  00002cbb    00000001     (.common:rx_flags)
+                  00002c30    00000024     (.common:uart)
+                  00002c54    00000020     (.common:rx_buffer_array1)
+                  00002c74    0000001c     (.common:rx1)
+                  00002c90    0000001c     (.common:tx1)
+                  00002cac    00000008     (.common:receiverList1)
+                  00002cb4    00000008     (.common:receiver_array1)
+                  00002cbc    00000004     adc.obj (.bss)
+                  00002cc0    00000004     (.common:idle_task)
+                  00002cc4    00000004     (.common:rollover_time)
+                  00002cc8    00000004     (.common:time_ms)
+                  00002ccc    00000001     (.common:error_flags)
+                  00002ccd    00000001     (.common:rx_flags)
 
-.data      0    00002cbc    00000005     UNINITIALIZED
-                  00002cbc    00000002     list.obj (.data)
-                  00002cbe    00000001     task.obj (.data)
-                  00002cbf    00000001     timing.obj (.data)
-                  00002cc0    00000001     uart.obj (.data)
+.data      0    00002cce    00000005     UNINITIALIZED
+                  00002cce    00000002     list.obj (.data)
+                  00002cd0    00000001     task.obj (.data)
+                  00002cd1    00000001     timing.obj (.data)
+                  00002cd2    00000001     uart.obj (.data)
 
 .stack     0    00004360    000000a0     UNINITIALIZED
                   00004360    00000004     rts430x_lc_rd_eabi.lib : boot.c.obj (.stack)
                   00004364    0000009c     --HOLE--
 
 .text:_isr 
-*          0    00004400    00000070     
-                  00004400    00000026     hal_adc.obj (.text:_isr:ADC12_ISR)
-                  00004426    0000001c     rts430x_lc_rd_eabi.lib : boot.c.obj (.text:_isr:_c_int00_noargs)
-                  00004442    00000018     hal_uart.obj (.text:_isr:_UART0_ISR)
-                  0000445a    0000000e     timing.obj (.text:_isr:TIMER0_A0_ISR)
-                  00004468    00000008     rts430x_lc_rd_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
+*          0    00004400    00000060     
+                  00004400    0000001c     rts430x_lc_rd_eabi.lib : boot.c.obj (.text:_isr:_c_int00_noargs)
+                  0000441c    00000018     hal_uart.obj (.text:_isr:_UART1_ISR)
+                  00004434    00000016     hal_adc.obj (.text:_isr:ADC12_ISR)
+                  0000444a    0000000e     timing.obj (.text:_isr:TIMER0_A0_ISR)
+                  00004458    00000008     rts430x_lc_rd_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
 
-.cinit     0    00004490    0000002a     
-                  00004490    0000000c     (__TI_handler_table)
-                  0000449c    00000008     (.cinit..data.load) [load image, compression = lzss]
-                  000044a4    00000006     (.cinit..bss.load) [load image, compression = zero_init]
-                  000044aa    00000010     (__TI_cinit_table)
+.cinit     0    00004470    0000002a     
+                  00004470    0000000c     (__TI_handler_table)
+                  0000447c    00000008     (.cinit..data.load) [load image, compression = lzss]
+                  00004484    00000006     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000448a    00000010     (__TI_cinit_table)
 
 .binit     0    00004400    00000000     
 
 .init_array 
 *          0    00004400    00000000     UNINITIALIZED
 
-.const     0    00004470    00000020     
-                  00004470    00000020     main.obj (.const:.string)
+.const     0    00004460    00000010     
+                  00004460    00000010     main.obj (.const:.string)
 
 RTC        0    0000ffd2    00000002     
                   0000ffd2    00000002     rts430x_lc_rd_eabi.lib : int41.asm.obj (.int41)
@@ -163,7 +163,7 @@ USCI_B1    0    0000ffda    00000002
                   0000ffda    00000002     rts430x_lc_rd_eabi.lib : int45.asm.obj (.int45)
 
 USCI_A1    0    0000ffdc    00000002     
-                  0000ffdc    00000002     rts430x_lc_rd_eabi.lib : int46.asm.obj (.int46)
+                  0000ffdc    00000002     hal_uart.obj (.int46)
 
 PORT1      0    0000ffde    00000002     
                   0000ffde    00000002     rts430x_lc_rd_eabi.lib : int47.asm.obj (.int47)
@@ -197,7 +197,7 @@ USCI_B0    0    0000ffee    00000002
                   0000ffee    00000002     rts430x_lc_rd_eabi.lib : int55.asm.obj (.int55)
 
 USCI_A0    0    0000fff0    00000002     
-                  0000fff0    00000002     hal_uart.obj (.int56)
+                  0000fff0    00000002     rts430x_lc_rd_eabi.lib : int56.asm.obj (.int56)
 
 WDT        0    0000fff2    00000002     
                   0000fff2    00000002     rts430x_lc_rd_eabi.lib : int57.asm.obj (.int57)
@@ -222,98 +222,92 @@ SYSNMI     0    0000fffc    00000002
 .reset     0    0000fffe    00000002     
                   0000fffe    00000002     rts430x_lc_rd_eabi.lib : boot.c.obj (.reset)
 
-.text      0    00010000    00002170     
-                  00010000    00000280     rts430x_lc_rd_eabi.lib : frcmpyd.c.obj (.text:__TI_frcmpyd)
-                  00010280    00000266                            : mpyd.c.obj (.text:__mspabi_mpyd)
-                  000104e6    00000200     hal_uart.obj (.text:hal_UART_Init)
-                  000106e6    000001d4     buffer_printf.obj (.text:Buffer_vprintf)
-                  000108ba    000001a0     uart.obj (.text:UART_Tick)
-                  00010a5a    00000118     list.obj (.text:Link)
-                  00010b72    000000f8     list.obj (.text:Unlink)
-                  00010c6a    000000be     list.obj (.text:List_LinkItem)
-                  00010d28    000000b8     task.obj (.text:SystemTick)
-                  00010de0    000000b8     rts430x_lc_rd_eabi.lib : fs_mpy.asm.obj (.text)
-                  00010e98    000000b4     buffer_printf.obj (.text:Buffer_HexN)
-                  00010f4c    000000a8     list.obj (.text:List_Link)
-                  00010ff4    0000009e     list.obj (.text:FindUnusedLink)
-                  00011092    0000009e     uart.obj (.text:UART_Init)
-                  00011130    0000009c     buffer_printf.obj (.text:Buffer_Float)
-                  000111cc    00000090     buffer.obj (.text:Buffer_Enqueue)
-                  0001125c    0000008c     list.obj (.text:List_Init)
-                  000112e8    0000008c     rts430x_lc_rd_eabi.lib : cvtdf.c.obj (.text:__mspabi_cvtdf)
-                  00011374    00000080                            : fltuld.c.obj (.text:__mspabi_fltuld)
-                  000113f4    0000007e                            : fs_tol.asm.obj (.text)
-                  00011472    0000007a     adc.obj (.text:ADC_AddChannel)
-                  000114ec    00000078     main.obj (.text:SetClk24MHz)
-                  00011564    00000076     rts430x_lc_rd_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
-                  000115da    00000070     task.obj (.text:Task_Init)
-                  0001164a    0000006e     hal_adc.obj (.text:hal_ADC_StartChannel)
-                  000116b8    00000068     rts430x_lc_rd_eabi.lib : fs_toi.asm.obj (.text)
-                  00011720    00000064     list.obj (.text:FindLinkByItem)
-                  00011784    00000062     buffer_printf.obj (.text:Buffer_uint32)
-                  000117e6    0000005c     adc.obj (.text:QueueMeasurement)
-                  00011842    0000005c     main.obj (.text:printADCValue2)
-                  0001189e    00000058     rts430x_lc_rd_eabi.lib : div32u.asm.obj (.text)
-                  000118f6    00000056     uart.obj (.text:UART_Tx_Start)
-                  0001194c    00000054     adc.obj (.text:ADC_ProcessMeasurementFromISR)
-                  000119a0    00000054     list.obj (.text:List_AddIndirect)
-                  000119f4    00000054     rts430x_lc_rd_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit_hold_wdt:__TI_auto_init_nobinit_nopinit_hold_wdt)
-                  00011a48    00000052     buffer_printf.obj (.text:Buffer_uint16)
-                  00011a9a    0000004e     main.obj (.text:SetVcoreUp)
-                  00011ae8    0000004e     uart.obj (.text:UART_Tx_Handler)
-                  00011b36    0000004a     task.obj (.text:Task_Schedule)
-                  00011b80    00000044     task.obj (.text:RollTimer)
-                  00011bc4    0000003e     buffer.obj (.text:Buffer_Dequeue)
-                  00011c02    0000003e     uart.obj (.text:UART_Rx_Handler)
-                  00011c40    0000003e     rts430x_lc_rd_eabi.lib : asr32.asm.obj (.text:l_asr_const)
-                  00011c7e    0000003e                            : lsl32.asm.obj (.text:l_lsl_const)
-                  00011cbc    0000003e                            : lsr32.asm.obj (.text:l_lsr_const)
-                  00011cfa    0000003a     main.obj (.text:main)
-                  00011d34    00000034     list.obj (.text:GetUnusedLink)
-                  00011d68    00000032     task.obj (.text:Task_Queue)
-                  00011d9a    00000032     uart.obj (.text:UART_printf)
-                  00011dcc    0000002a     buffer.obj (.text:Buffer_Init)
-                  00011df6    0000002a     buffer_printf.obj (.text:Buffer_int32)
-                  00011e20    00000028     adc.obj (.text:CallCallback)
-                  00011e48    00000024     rts430x_lc_rd_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
-                  00011e6c    00000024     hal_uart.obj (.text:hal_UART_TxInterruptEnabled)
-                  00011e90    00000024     rts430x_lc_rd_eabi.lib : mult32_f5hw.asm.obj (.text)
-                  00011eb4    00000022     buffer_printf.obj (.text:Buffer_int16)
-                  00011ed6    00000020     list.obj (.text:List_GetFirst)
-                  00011ef6    00000020     hal_uart.obj (.text:hal_UART_DataAvailable)
-                  00011f16    00000020     hal_uart.obj (.text:hal_UART_SpaceAvailable)
-                  00011f36    0000001e     list.obj (.text:List_Remove)
-                  00011f54    0000001e     timing.obj (.text:Timing_Init)
-                  00011f72    0000001c     hal_uart.obj (.text:hal_UART_RxByte)
-                  00011f8e    0000001a     buffer_printf.obj (.text:Buffer_Str)
-                  00011fa8    0000001a     task.obj (.text:SortTask)
-                  00011fc2    00000018     list.obj (.text:List_GetNext)
-                  00011fda    00000018     timing.obj (.text:hal_Timing_Init)
-                  00011ff2    00000018     rts430x_lc_rd_eabi.lib : mult16_f5hw.asm.obj (.text)
-                  0001200a    00000016     adc.obj (.text:ADC_Init)
-                  00012020    00000016     hal_adc.obj (.text:hal_ADC_Init)
-                  00012036    00000016     hal_uart.obj (.text:hal_UART_ClearRxIF)
-                  0001204c    00000016     hal_uart.obj (.text:hal_UART_Disable)
-                  00012062    00000016     hal_uart.obj (.text:hal_UART_DisableTxInterrupt)
-                  00012078    00000016     hal_uart.obj (.text:hal_UART_Enable)
-                  0001208e    00000016     hal_uart.obj (.text:hal_UART_EnableRxInterrupt)
-                  000120a4    00000016     hal_uart.obj (.text:hal_UART_EnableTxInterrupt)
-                  000120ba    00000016     hal_uart.obj (.text:hal_UART_TxByte)
-                  000120d0    00000016     rts430x_lc_rd_eabi.lib : div16u.asm.obj (.text)
-                  000120e6    00000014     timing.obj (.text:Timing_Roll)
-                  000120fa    00000014     rts430x_lc_rd_eabi.lib : memcpy.c.obj (.text:memcpy)
-                  0001210e    00000012                            : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
-                  00012120    0000000e     task.obj (.text:IdentifyTask)
-                  0001212e    0000000c     list.obj (.text:List_UnlinkFirst)
-                  0001213a    0000000a     timing.obj (.text:TimeNow)
-                  00012144    0000000a     rts430x_lc_rd_eabi.lib : lsl16.asm.obj (.text)
-                  0001214e    00000006     list.obj (.text:List_SetIdentifyFunction)
-                  00012154    00000006     list.obj (.text:List_SetSortFunction)
-                  0001215a    00000006     rts430x_lc_rd_eabi.lib : fltud.c.obj (.text:__mspabi_fltud)
-                  00012160    00000006                            : exit.c.obj (.text:abort)
-                  00012166    00000004     buffer.obj (.text:Buffer_GetSize)
-                  0001216a    00000004     rts430x_lc_rd_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
-                  0001216e    00000002                            : startup.c.obj (.text:_system_post_cinit)
+.text      0    00010000    00001b96     
+                  00010000    00000200     hal_uart.obj (.text:hal_UART_Init)
+                  00010200    000001d4     buffer_printf.obj (.text:Buffer_vprintf)
+                  000103d4    000001a0     uart.obj (.text:UART_Tick)
+                  00010574    00000118     list.obj (.text:Link)
+                  0001068c    000000f8     list.obj (.text:Unlink)
+                  00010784    000000be     list.obj (.text:List_LinkItem)
+                  00010842    000000b8     task.obj (.text:SystemTick)
+                  000108fa    000000b8     rts430x_lc_rd_eabi.lib : fs_mpy.asm.obj (.text)
+                  000109b2    000000b4     buffer_printf.obj (.text:Buffer_HexN)
+                  00010a66    000000a8     list.obj (.text:List_Link)
+                  00010b0e    0000009e     list.obj (.text:FindUnusedLink)
+                  00010bac    0000009e     uart.obj (.text:UART_Init)
+                  00010c4a    0000009c     buffer_printf.obj (.text:Buffer_Float)
+                  00010ce6    00000096     hal_adc.obj (.text:hal_ADC_StartChannel)
+                  00010d7c    00000090     buffer.obj (.text:Buffer_Enqueue)
+                  00010e0c    0000008c     list.obj (.text:List_Init)
+                  00010e98    0000008c     rts430x_lc_rd_eabi.lib : cvtdf.c.obj (.text:__mspabi_cvtdf)
+                  00010f24    0000007e                            : fs_tol.asm.obj (.text)
+                  00010fa2    0000007a     adc.obj (.text:ADC_AddChannel)
+                  0001101c    00000078     main.obj (.text:SetClk24MHz)
+                  00011094    00000076     rts430x_lc_rd_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  0001110a    00000070     task.obj (.text:Task_Init)
+                  0001117a    00000068     rts430x_lc_rd_eabi.lib : fs_toi.asm.obj (.text)
+                  000111e2    00000064     list.obj (.text:FindLinkByItem)
+                  00011246    00000062     buffer_printf.obj (.text:Buffer_uint32)
+                  000112a8    0000005c     adc.obj (.text:QueueMeasurement)
+                  00011304    00000058     rts430x_lc_rd_eabi.lib : div32u.asm.obj (.text)
+                  0001135c    00000056     uart.obj (.text:UART_Tx_Start)
+                  000113b2    00000054     adc.obj (.text:ADC_ProcessMeasurementFromISR)
+                  00011406    00000054     list.obj (.text:List_AddIndirect)
+                  0001145a    00000054     rts430x_lc_rd_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit_hold_wdt:__TI_auto_init_nobinit_nopinit_hold_wdt)
+                  000114ae    00000052     buffer_printf.obj (.text:Buffer_uint16)
+                  00011500    0000004e     main.obj (.text:SetVcoreUp)
+                  0001154e    0000004e     uart.obj (.text:UART_Tx_Handler)
+                  0001159c    0000004a     task.obj (.text:Task_Schedule)
+                  000115e6    00000046     main.obj (.text:main)
+                  0001162c    00000044     task.obj (.text:RollTimer)
+                  00011670    0000003e     buffer.obj (.text:Buffer_Dequeue)
+                  000116ae    0000003e     uart.obj (.text:UART_Rx_Handler)
+                  000116ec    0000003e     rts430x_lc_rd_eabi.lib : lsl32.asm.obj (.text:l_lsl_const)
+                  0001172a    0000003e                            : lsr32.asm.obj (.text:l_lsr_const)
+                  00011768    00000034     list.obj (.text:GetUnusedLink)
+                  0001179c    00000032     task.obj (.text:Task_Queue)
+                  000117ce    00000032     uart.obj (.text:UART_printf)
+                  00011800    0000002a     buffer.obj (.text:Buffer_Init)
+                  0001182a    0000002a     buffer_printf.obj (.text:Buffer_int32)
+                  00011854    00000028     adc.obj (.text:CallCallback)
+                  0001187c    00000024     rts430x_lc_rd_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
+                  000118a0    00000024     hal_uart.obj (.text:hal_UART_TxInterruptEnabled)
+                  000118c4    00000022     buffer_printf.obj (.text:Buffer_int16)
+                  000118e6    00000020     list.obj (.text:List_GetFirst)
+                  00011906    00000020     hal_uart.obj (.text:hal_UART_DataAvailable)
+                  00011926    00000020     hal_uart.obj (.text:hal_UART_SpaceAvailable)
+                  00011946    0000001e     list.obj (.text:List_Remove)
+                  00011964    0000001e     timing.obj (.text:Timing_Init)
+                  00011982    0000001c     hal_uart.obj (.text:hal_UART_RxByte)
+                  0001199e    0000001c     main.obj (.text:printADCValue)
+                  000119ba    0000001a     buffer_printf.obj (.text:Buffer_Str)
+                  000119d4    0000001a     task.obj (.text:SortTask)
+                  000119ee    00000018     list.obj (.text:List_GetNext)
+                  00011a06    00000018     timing.obj (.text:hal_Timing_Init)
+                  00011a1e    00000018     rts430x_lc_rd_eabi.lib : mult16_f5hw.asm.obj (.text)
+                  00011a36    00000016     adc.obj (.text:ADC_Init)
+                  00011a4c    00000016     hal_adc.obj (.text:hal_ADC_Init)
+                  00011a62    00000016     hal_uart.obj (.text:hal_UART_ClearRxIF)
+                  00011a78    00000016     hal_uart.obj (.text:hal_UART_Disable)
+                  00011a8e    00000016     hal_uart.obj (.text:hal_UART_DisableTxInterrupt)
+                  00011aa4    00000016     hal_uart.obj (.text:hal_UART_Enable)
+                  00011aba    00000016     hal_uart.obj (.text:hal_UART_EnableRxInterrupt)
+                  00011ad0    00000016     hal_uart.obj (.text:hal_UART_EnableTxInterrupt)
+                  00011ae6    00000016     hal_uart.obj (.text:hal_UART_TxByte)
+                  00011afc    00000016     rts430x_lc_rd_eabi.lib : div16u.asm.obj (.text)
+                  00011b12    00000014     timing.obj (.text:Timing_Roll)
+                  00011b26    00000014     rts430x_lc_rd_eabi.lib : memcpy.c.obj (.text:memcpy)
+                  00011b3a    00000012                            : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00011b4c    0000000e     task.obj (.text:IdentifyTask)
+                  00011b5a    0000000c     list.obj (.text:List_UnlinkFirst)
+                  00011b66    0000000a     timing.obj (.text:TimeNow)
+                  00011b70    0000000a     rts430x_lc_rd_eabi.lib : lsl16.asm.obj (.text)
+                  00011b7a    00000006     list.obj (.text:List_SetIdentifyFunction)
+                  00011b80    00000006     list.obj (.text:List_SetSortFunction)
+                  00011b86    00000006     rts430x_lc_rd_eabi.lib : exit.c.obj (.text:abort)
+                  00011b8c    00000004     buffer.obj (.text:Buffer_GetSize)
+                  00011b90    00000004     rts430x_lc_rd_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00011b94    00000002                            : startup.c.obj (.text:_system_post_cinit)
 
 MODULE SUMMARY
 
@@ -322,33 +316,28 @@ MODULE SUMMARY
     .\
        task.obj                     528    0         1453   
        list.obj                     1530   0         2      
-       uart.obj                     850    0         637    
+       uart.obj                     850    0         655    
        buffer_printf.obj            1086   0         0      
        hal_uart.obj                 818    2         0      
        adc.obj                      360    0         140    
-       main.obj                     348    32        0      
+       main.obj                     296    16        0      
        buffer.obj                   252    0         0      
-       hal_adc.obj                  170    2         0      
+       hal_adc.obj                  194    2         0      
        timing.obj                   98     2         9      
     +--+----------------------------+------+---------+---------+
-       Total:                       6040   38        2241   
+       Total:                       6012   22        2259   
                                                             
     C:\ti\ccsv8\tools\compiler\ti-cgt-msp430_18.1.2.LTS\lib\rts430x_lc_rd_eabi.lib
-       frcmpyd.c.obj                640    0         0      
-       mpyd.c.obj                   614    0         0      
        fs_mpy.asm.obj               184    0         0      
        cvtdf.c.obj                  140    0         0      
-       fltuld.c.obj                 128    0         0      
        fs_tol.asm.obj               126    0         0      
        copy_decompress_lzss.c.obj   118    0         0      
        fs_toi.asm.obj               104    0         0      
        div32u.asm.obj               88     0         0      
        autoinit.c.obj               84     0         0      
-       asr32.asm.obj                62     0         0      
        lsl32.asm.obj                62     0         0      
        lsr32.asm.obj                62     0         0      
        copy_zero_init.c.obj         36     0         0      
-       mult32_f5hw.asm.obj          36     0         0      
        boot.c.obj                   28     2         0      
        mult16_f5hw.asm.obj          24     0         0      
        div16u.asm.obj               22     0         0      
@@ -357,14 +346,12 @@ MODULE SUMMARY
        lsl16.asm.obj                10     0         0      
        isr_trap.asm.obj             8      0         0      
        exit.c.obj                   6      0         0      
-       fltud.c.obj                  6      0         0      
        pre_init.c.obj               4      0         0      
        int41.asm.obj                0      2         0      
        int42.asm.obj                0      2         0      
        int43.asm.obj                0      2         0      
        int44.asm.obj                0      2         0      
        int45.asm.obj                0      2         0      
-       int46.asm.obj                0      2         0      
        int47.asm.obj                0      2         0      
        int48.asm.obj                0      2         0      
        int49.asm.obj                0      2         0      
@@ -372,6 +359,7 @@ MODULE SUMMARY
        int51.asm.obj                0      2         0      
        int52.asm.obj                0      2         0      
        int55.asm.obj                0      2         0      
+       int56.asm.obj                0      2         0      
        int57.asm.obj                0      2         0      
        int58.asm.obj                0      2         0      
        int59.asm.obj                0      2         0      
@@ -380,24 +368,24 @@ MODULE SUMMARY
        int62.asm.obj                0      2         0      
        startup.c.obj                2      0         0      
     +--+----------------------------+------+---------+---------+
-       Total:                       2632   40        0      
+       Total:                       1146   40        0      
                                                             
        Stack:                       0      0         160    
        Linker Generated:            0      42        0      
     +--+----------------------------+------+---------+---------+
-       Grand Total:                 8672   120       2401   
+       Grand Total:                 7158   104       2419   
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 000044aa records: 2, size/record: 8, table size: 16
-	.data: load addr=0000449c, load size=00000008 bytes, run addr=00002cbc, run size=00000005 bytes, compression=lzss
-	.bss: load addr=000044a4, load size=00000006 bytes, run addr=00002400, run size=000008bc bytes, compression=zero_init
+__TI_cinit_table @ 0000448a records: 2, size/record: 8, table size: 16
+	.data: load addr=0000447c, load size=00000008 bytes, run addr=00002cce, run size=00000005 bytes, compression=lzss
+	.bss: load addr=00004484, load size=00000006 bytes, run addr=00002400, run size=000008ce bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00004490 records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 00004470 records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_zero_init
 	index: 1, handler: __TI_decompress_lzss
 	index: 2, handler: __TI_decompress_none
@@ -489,23 +477,23 @@ address   name
 00000732  ADC12MEM9                              
 00000733  ADC12MEM9_H                            
 00000732  ADC12MEM9_L                            
-00004400  ADC12_ISR                              
-00011472  ADC_AddChannel                         
-0001200a  ADC_Init                               
-0001194c  ADC_ProcessMeasurementFromISR          
-00011bc4  Buffer_Dequeue                         
-000111cc  Buffer_Enqueue                         
-00011130  Buffer_Float                           
-00012166  Buffer_GetSize                         
-00010e98  Buffer_HexN                            
-00011dcc  Buffer_Init                            
-00011f8e  Buffer_Str                             
-00011eb4  Buffer_int16                           
-00011df6  Buffer_int32                           
-00011a48  Buffer_uint16                          
-00011784  Buffer_uint32                          
-000106e6  Buffer_vprintf                         
-00012160  C$$EXIT                                
+00004434  ADC12_ISR                              
+00010fa2  ADC_AddChannel                         
+00011a36  ADC_Init                               
+000113b2  ADC_ProcessMeasurementFromISR          
+00011670  Buffer_Dequeue                         
+00010d7c  Buffer_Enqueue                         
+00010c4a  Buffer_Float                           
+00011b8c  Buffer_GetSize                         
+000109b2  Buffer_HexN                            
+00011800  Buffer_Init                            
+000119ba  Buffer_Str                             
+000118c4  Buffer_int16                           
+0001182a  Buffer_int32                           
+000114ae  Buffer_uint16                          
+00011246  Buffer_uint32                          
+00010200  Buffer_vprintf                         
+00011b86  C$$EXIT                                
 000008c0  CBCTL0                                 
 000008c1  CBCTL0_H                               
 000008c0  CBCTL0_L                               
@@ -591,16 +579,16 @@ address   name
 00000146  FCTL4                                  
 00000147  FCTL4_H                                
 00000146  FCTL4_L                                
-000119a0  List_AddIndirect                       
-00011ed6  List_GetFirst                          
-00011fc2  List_GetNext                           
-0001125c  List_Init                              
-00010f4c  List_Link                              
-00010c6a  List_LinkItem                          
-00011f36  List_Remove                            
-0001214e  List_SetIdentifyFunction               
-00012154  List_SetSortFunction                   
-0001212e  List_UnlinkFirst                       
+00011406  List_AddIndirect                       
+000118e6  List_GetFirst                          
+000119ee  List_GetNext                           
+00010e0c  List_Init                              
+00010a66  List_Link                              
+00010784  List_LinkItem                          
+00011946  List_Remove                            
+00011b7a  List_SetIdentifyFunction               
+00011b80  List_SetSortFunction                   
+00011b5a  List_UnlinkFirst                       
 000004c4  MAC                                    
 000004da  MAC32H                                 
 000004db  MAC32H_H                               
@@ -892,9 +880,9 @@ address   name
 0000019a  SYSUNIV                                
 0000019b  SYSUNIV_H                              
 0000019a  SYSUNIV_L                              
-000114ec  SetClk24MHz                            
-00011a9a  SetVcoreUp                             
-00010d28  SystemTick                             
+0001101c  SetClk24MHz                            
+00011500  SetVcoreUp                             
+00010842  SystemTick                             
 00000352  TA0CCR0                                
 00000354  TA0CCR1                                
 00000356  TA0CCR2                                
@@ -947,19 +935,19 @@ address   name
 000003e0  TB0EX0                                 
 000003ee  TB0IV                                  
 000003d0  TB0R                                   
-0000445a  TIMER0_A0_ISR                          
-000115da  Task_Init                              
-00011d68  Task_Queue                             
-00011b36  Task_Schedule                          
-0001213a  TimeNow                                
-00011f54  Timing_Init                            
-000120e6  Timing_Roll                            
-00011092  UART_Init                              
-000104e6  UART_ReconfigureBaud                   
-00011c02  UART_Rx_Handler                        
-000108ba  UART_Tick                              
-00011ae8  UART_Tx_Handler                        
-00011d9a  UART_printf                            
+0000444a  TIMER0_A0_ISR                          
+0001110a  Task_Init                              
+0001179c  Task_Queue                             
+0001159c  Task_Schedule                          
+00011b66  TimeNow                                
+00011964  Timing_Init                            
+00011b12  Timing_Roll                            
+00010bac  UART_Init                              
+00010000  UART_ReconfigureBaud                   
+000116ae  UART_Rx_Handler                        
+000103d4  UART_Tick                              
+0001154e  UART_Tx_Handler                        
+000117ce  UART_printf                            
 000005d0  UCA0ABCTL                              
 000005c6  UCA0BRW                                
 000005c7  UCA0BRW_H                              
@@ -1198,18 +1186,17 @@ address   name
 0000015c  WDTCTL                                 
 0000015d  WDTCTL_H                               
 0000015c  WDTCTL_L                               
-00004442  _UART0_ISR                             
+0000441c  _UART1_ISR                             
 00004400  __STACK_END                            
 000000a0  __STACK_SIZE                           
-000044aa  __TI_CINIT_Base                        
-000044ba  __TI_CINIT_Limit                       
-00004490  __TI_Handler_Table_Base                
-0000449c  __TI_Handler_Table_Limit               
-00004468  __TI_ISR_TRAP                          
-000119f4  __TI_auto_init_nobinit_nopinit_hold_wdt
-00011564  __TI_decompress_lzss                   
-0001210e  __TI_decompress_none                   
-00010000  __TI_frcmpyd                           
+0000448a  __TI_CINIT_Base                        
+0000449a  __TI_CINIT_Limit                       
+00004470  __TI_Handler_Table_Base                
+0000447c  __TI_Handler_Table_Limit               
+00004458  __TI_ISR_TRAP                          
+0001145a  __TI_auto_init_nobinit_nopinit_hold_wdt
+00011094  __TI_decompress_lzss                   
+00011b3a  __TI_decompress_none                   
 0000ffd2  __TI_int41                             
 0000ffd4  __TI_int42                             
 0000ffd6  __TI_int43                             
@@ -1235,106 +1222,87 @@ address   name
 ffffffff  __TI_pprof_out_hndl                    
 ffffffff  __TI_prof_data_size                    
 ffffffff  __TI_prof_data_start                   
-00011e48  __TI_zero_init                         
+0001187c  __TI_zero_init                         
 ffffffff  __c_args__                             
-000112e8  __mspabi_cvtdf                         
-000120d0  __mspabi_divu                          
-0001189e  __mspabi_divul                         
-000116b8  __mspabi_fixfi                         
-000113f4  __mspabi_fixfli                        
-0001215a  __mspabi_fltud                         
-00011374  __mspabi_fltuld                        
-00010280  __mspabi_mpyd                          
-00010de0  __mspabi_mpyf                          
-00011ff2  __mspabi_mpyi_f5hw                     
-00011e90  __mspabi_mpyl_f5hw                     
-000120d0  __mspabi_remu                          
-0001189e  __mspabi_remul                         
-00012144  __mspabi_slli                          
-00011cb6  __mspabi_slll_1                        
-00011c92  __mspabi_slll_10                       
-00011c8e  __mspabi_slll_11                       
-00011c8a  __mspabi_slll_12                       
-00011c86  __mspabi_slll_13                       
-00011c82  __mspabi_slll_14                       
-00011c7e  __mspabi_slll_15                       
-00011cb2  __mspabi_slll_2                        
-00011cae  __mspabi_slll_3                        
-00011caa  __mspabi_slll_4                        
-00011ca6  __mspabi_slll_5                        
-00011ca2  __mspabi_slll_6                        
-00011c9e  __mspabi_slll_7                        
-00011c9a  __mspabi_slll_8                        
-00011c96  __mspabi_slll_9                        
-00011c78  __mspabi_sral_1                        
-00011c54  __mspabi_sral_10                       
-00011c50  __mspabi_sral_11                       
-00011c4c  __mspabi_sral_12                       
-00011c48  __mspabi_sral_13                       
-00011c44  __mspabi_sral_14                       
-00011c40  __mspabi_sral_15                       
-00011c74  __mspabi_sral_2                        
-00011c70  __mspabi_sral_3                        
-00011c6c  __mspabi_sral_4                        
-00011c68  __mspabi_sral_5                        
-00011c64  __mspabi_sral_6                        
-00011c60  __mspabi_sral_7                        
-00011c5c  __mspabi_sral_8                        
-00011c58  __mspabi_sral_9                        
-00011cf4  __mspabi_srll_1                        
-00011cd0  __mspabi_srll_10                       
-00011ccc  __mspabi_srll_11                       
-00011cc8  __mspabi_srll_12                       
-00011cc4  __mspabi_srll_13                       
-00011cc0  __mspabi_srll_14                       
-00011cbc  __mspabi_srll_15                       
-00011cf0  __mspabi_srll_2                        
-00011cec  __mspabi_srll_3                        
-00011ce8  __mspabi_srll_4                        
-00011ce4  __mspabi_srll_5                        
-00011ce0  __mspabi_srll_6                        
-00011cdc  __mspabi_srll_7                        
-00011cd8  __mspabi_srll_8                        
-00011cd4  __mspabi_srll_9                        
-00004426  _c_int00_noargs                        
+00010e98  __mspabi_cvtdf                         
+00011afc  __mspabi_divu                          
+00011304  __mspabi_divul                         
+0001117a  __mspabi_fixfi                         
+00010f24  __mspabi_fixfli                        
+000108fa  __mspabi_mpyf                          
+00011a1e  __mspabi_mpyi_f5hw                     
+00011afc  __mspabi_remu                          
+00011304  __mspabi_remul                         
+00011b70  __mspabi_slli                          
+00011724  __mspabi_slll_1                        
+00011700  __mspabi_slll_10                       
+000116fc  __mspabi_slll_11                       
+000116f8  __mspabi_slll_12                       
+000116f4  __mspabi_slll_13                       
+000116f0  __mspabi_slll_14                       
+000116ec  __mspabi_slll_15                       
+00011720  __mspabi_slll_2                        
+0001171c  __mspabi_slll_3                        
+00011718  __mspabi_slll_4                        
+00011714  __mspabi_slll_5                        
+00011710  __mspabi_slll_6                        
+0001170c  __mspabi_slll_7                        
+00011708  __mspabi_slll_8                        
+00011704  __mspabi_slll_9                        
+00011762  __mspabi_srll_1                        
+0001173e  __mspabi_srll_10                       
+0001173a  __mspabi_srll_11                       
+00011736  __mspabi_srll_12                       
+00011732  __mspabi_srll_13                       
+0001172e  __mspabi_srll_14                       
+0001172a  __mspabi_srll_15                       
+0001175e  __mspabi_srll_2                        
+0001175a  __mspabi_srll_3                        
+00011756  __mspabi_srll_4                        
+00011752  __mspabi_srll_5                        
+0001174e  __mspabi_srll_6                        
+0001174a  __mspabi_srll_7                        
+00011746  __mspabi_srll_8                        
+00011742  __mspabi_srll_9                        
+00004400  _c_int00_noargs                        
 0000fffe  _reset_vector                          
 00004360  _stack                                 
-0001216e  _system_post_cinit                     
-0001216a  _system_pre_init                       
-00012160  abort                                  
-00002cba  error_flags                            
-00012020  hal_ADC_Init                           
-0001164a  hal_ADC_StartChannel                   
-00011fda  hal_Timing_Init                        
-00012036  hal_UART_ClearRxIF                     
-00011ef6  hal_UART_DataAvailable                 
-0001204c  hal_UART_Disable                       
-00012062  hal_UART_DisableTxInterrupt            
-00012078  hal_UART_Enable                        
-0001208e  hal_UART_EnableRxInterrupt             
-000120a4  hal_UART_EnableTxInterrupt             
-000104e6  hal_UART_Init                          
-00011f72  hal_UART_RxByte                        
-00011f16  hal_UART_SpaceAvailable                
-000120ba  hal_UART_TxByte                        
-00011e6c  hal_UART_TxInterruptEnabled            
-00002cae  idle_task                              
-00011cfa  main                                   
-000120fa  memcpy                                 
-00011842  printADCValue2                         
-00002c9a  receiverList0                          
-00002ca2  receiver_array0                        
-00002cb2  rollover_time                          
-00002c50  rx0                                    
-00002c30  rx_buffer_array0                       
-00002cbb  rx_flags                               
+00011b94  _system_post_cinit                     
+00011b90  _system_pre_init                       
+00011b86  abort                                  
+00002ccc  error_flags                            
+00011a4c  hal_ADC_Init                           
+00010ce6  hal_ADC_StartChannel                   
+00011a06  hal_Timing_Init                        
+00011a62  hal_UART_ClearRxIF                     
+00011906  hal_UART_DataAvailable                 
+00011a78  hal_UART_Disable                       
+00011a8e  hal_UART_DisableTxInterrupt            
+00011aa4  hal_UART_Enable                        
+00011aba  hal_UART_EnableRxInterrupt             
+00011ad0  hal_UART_EnableTxInterrupt             
+00010000  hal_UART_Init                          
+00011982  hal_UART_RxByte                        
+00011926  hal_UART_SpaceAvailable                
+00011ae6  hal_UART_TxByte                        
+000118a0  hal_UART_TxInterruptEnabled            
+00002cc0  idle_task                              
+000115e6  main                                   
+00011b26  memcpy                                 
+0001199e  printADCValue                          
+00002cac  receiverList1                          
+00002cb4  receiver_array1                        
+00002cc4  rollover_time                          
+00002c74  rx1                                    
+00002c54  rx_buffer_array1                       
+00002ccd  rx_flags                               
 00002bd8  task_list                              
 00002400  task_list_array                        
 00002720  task_list_links                        
-00002cb6  time_ms                                
-00002c6c  tx0                                    
-00002978  tx_buffer_array0                       
-00002c88  uart                                   
+00002cc8  time_ms                                
+00002c90  tx1                                    
+00002978  tx_buffer_array1                       
+00002c30  uart                                   
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -2092,30 +2060,30 @@ address   name
 000023ff  USBIEPSIZXY_7                          
 00002400  task_list_array                        
 00002720  task_list_links                        
-00002978  tx_buffer_array0                       
+00002978  tx_buffer_array1                       
 00002bd8  task_list                              
-00002c30  rx_buffer_array0                       
-00002c50  rx0                                    
-00002c6c  tx0                                    
-00002c88  uart                                   
-00002c9a  receiverList0                          
-00002ca2  receiver_array0                        
-00002cae  idle_task                              
-00002cb2  rollover_time                          
-00002cb6  time_ms                                
-00002cba  error_flags                            
-00002cbb  rx_flags                               
+00002c30  uart                                   
+00002c54  rx_buffer_array1                       
+00002c74  rx1                                    
+00002c90  tx1                                    
+00002cac  receiverList1                          
+00002cb4  receiver_array1                        
+00002cc0  idle_task                              
+00002cc4  rollover_time                          
+00002cc8  time_ms                                
+00002ccc  error_flags                            
+00002ccd  rx_flags                               
 00004360  _stack                                 
-00004400  ADC12_ISR                              
 00004400  __STACK_END                            
-00004426  _c_int00_noargs                        
-00004442  _UART0_ISR                             
-0000445a  TIMER0_A0_ISR                          
-00004468  __TI_ISR_TRAP                          
-00004490  __TI_Handler_Table_Base                
-0000449c  __TI_Handler_Table_Limit               
-000044aa  __TI_CINIT_Base                        
-000044ba  __TI_CINIT_Limit                       
+00004400  _c_int00_noargs                        
+0000441c  _UART1_ISR                             
+00004434  ADC12_ISR                              
+0000444a  TIMER0_A0_ISR                          
+00004458  __TI_ISR_TRAP                          
+00004470  __TI_Handler_Table_Base                
+0000447c  __TI_Handler_Table_Limit               
+0000448a  __TI_CINIT_Base                        
+0000449a  __TI_CINIT_Limit                       
 0000ffd2  __TI_int41                             
 0000ffd4  __TI_int42                             
 0000ffd6  __TI_int43                             
@@ -2139,135 +2107,115 @@ address   name
 0000fffa  __TI_int61                             
 0000fffc  __TI_int62                             
 0000fffe  _reset_vector                          
-00010000  __TI_frcmpyd                           
-00010280  __mspabi_mpyd                          
-000104e6  UART_ReconfigureBaud                   
-000104e6  hal_UART_Init                          
-000106e6  Buffer_vprintf                         
-000108ba  UART_Tick                              
-00010c6a  List_LinkItem                          
-00010d28  SystemTick                             
-00010de0  __mspabi_mpyf                          
-00010e98  Buffer_HexN                            
-00010f4c  List_Link                              
-00011092  UART_Init                              
-00011130  Buffer_Float                           
-000111cc  Buffer_Enqueue                         
-0001125c  List_Init                              
-000112e8  __mspabi_cvtdf                         
-00011374  __mspabi_fltuld                        
-000113f4  __mspabi_fixfli                        
-00011472  ADC_AddChannel                         
-000114ec  SetClk24MHz                            
-00011564  __TI_decompress_lzss                   
-000115da  Task_Init                              
-0001164a  hal_ADC_StartChannel                   
-000116b8  __mspabi_fixfi                         
-00011784  Buffer_uint32                          
-00011842  printADCValue2                         
-0001189e  __mspabi_divul                         
-0001189e  __mspabi_remul                         
-0001194c  ADC_ProcessMeasurementFromISR          
-000119a0  List_AddIndirect                       
-000119f4  __TI_auto_init_nobinit_nopinit_hold_wdt
-00011a48  Buffer_uint16                          
-00011a9a  SetVcoreUp                             
-00011ae8  UART_Tx_Handler                        
-00011b36  Task_Schedule                          
-00011bc4  Buffer_Dequeue                         
-00011c02  UART_Rx_Handler                        
-00011c40  __mspabi_sral_15                       
-00011c44  __mspabi_sral_14                       
-00011c48  __mspabi_sral_13                       
-00011c4c  __mspabi_sral_12                       
-00011c50  __mspabi_sral_11                       
-00011c54  __mspabi_sral_10                       
-00011c58  __mspabi_sral_9                        
-00011c5c  __mspabi_sral_8                        
-00011c60  __mspabi_sral_7                        
-00011c64  __mspabi_sral_6                        
-00011c68  __mspabi_sral_5                        
-00011c6c  __mspabi_sral_4                        
-00011c70  __mspabi_sral_3                        
-00011c74  __mspabi_sral_2                        
-00011c78  __mspabi_sral_1                        
-00011c7e  __mspabi_slll_15                       
-00011c82  __mspabi_slll_14                       
-00011c86  __mspabi_slll_13                       
-00011c8a  __mspabi_slll_12                       
-00011c8e  __mspabi_slll_11                       
-00011c92  __mspabi_slll_10                       
-00011c96  __mspabi_slll_9                        
-00011c9a  __mspabi_slll_8                        
-00011c9e  __mspabi_slll_7                        
-00011ca2  __mspabi_slll_6                        
-00011ca6  __mspabi_slll_5                        
-00011caa  __mspabi_slll_4                        
-00011cae  __mspabi_slll_3                        
-00011cb2  __mspabi_slll_2                        
-00011cb6  __mspabi_slll_1                        
-00011cbc  __mspabi_srll_15                       
-00011cc0  __mspabi_srll_14                       
-00011cc4  __mspabi_srll_13                       
-00011cc8  __mspabi_srll_12                       
-00011ccc  __mspabi_srll_11                       
-00011cd0  __mspabi_srll_10                       
-00011cd4  __mspabi_srll_9                        
-00011cd8  __mspabi_srll_8                        
-00011cdc  __mspabi_srll_7                        
-00011ce0  __mspabi_srll_6                        
-00011ce4  __mspabi_srll_5                        
-00011ce8  __mspabi_srll_4                        
-00011cec  __mspabi_srll_3                        
-00011cf0  __mspabi_srll_2                        
-00011cf4  __mspabi_srll_1                        
-00011cfa  main                                   
-00011d68  Task_Queue                             
-00011d9a  UART_printf                            
-00011dcc  Buffer_Init                            
-00011df6  Buffer_int32                           
-00011e48  __TI_zero_init                         
-00011e6c  hal_UART_TxInterruptEnabled            
-00011e90  __mspabi_mpyl_f5hw                     
-00011eb4  Buffer_int16                           
-00011ed6  List_GetFirst                          
-00011ef6  hal_UART_DataAvailable                 
-00011f16  hal_UART_SpaceAvailable                
-00011f36  List_Remove                            
-00011f54  Timing_Init                            
-00011f72  hal_UART_RxByte                        
-00011f8e  Buffer_Str                             
-00011fc2  List_GetNext                           
-00011fda  hal_Timing_Init                        
-00011ff2  __mspabi_mpyi_f5hw                     
-0001200a  ADC_Init                               
-00012020  hal_ADC_Init                           
-00012036  hal_UART_ClearRxIF                     
-0001204c  hal_UART_Disable                       
-00012062  hal_UART_DisableTxInterrupt            
-00012078  hal_UART_Enable                        
-0001208e  hal_UART_EnableRxInterrupt             
-000120a4  hal_UART_EnableTxInterrupt             
-000120ba  hal_UART_TxByte                        
-000120d0  __mspabi_divu                          
-000120d0  __mspabi_remu                          
-000120e6  Timing_Roll                            
-000120fa  memcpy                                 
-0001210e  __TI_decompress_none                   
-0001212e  List_UnlinkFirst                       
-0001213a  TimeNow                                
-00012144  __mspabi_slli                          
-0001214e  List_SetIdentifyFunction               
-00012154  List_SetSortFunction                   
-0001215a  __mspabi_fltud                         
-00012160  C$$EXIT                                
-00012160  abort                                  
-00012166  Buffer_GetSize                         
-0001216a  _system_pre_init                       
-0001216e  _system_post_cinit                     
+00010000  UART_ReconfigureBaud                   
+00010000  hal_UART_Init                          
+00010200  Buffer_vprintf                         
+000103d4  UART_Tick                              
+00010784  List_LinkItem                          
+00010842  SystemTick                             
+000108fa  __mspabi_mpyf                          
+000109b2  Buffer_HexN                            
+00010a66  List_Link                              
+00010bac  UART_Init                              
+00010c4a  Buffer_Float                           
+00010ce6  hal_ADC_StartChannel                   
+00010d7c  Buffer_Enqueue                         
+00010e0c  List_Init                              
+00010e98  __mspabi_cvtdf                         
+00010f24  __mspabi_fixfli                        
+00010fa2  ADC_AddChannel                         
+0001101c  SetClk24MHz                            
+00011094  __TI_decompress_lzss                   
+0001110a  Task_Init                              
+0001117a  __mspabi_fixfi                         
+00011246  Buffer_uint32                          
+00011304  __mspabi_divul                         
+00011304  __mspabi_remul                         
+000113b2  ADC_ProcessMeasurementFromISR          
+00011406  List_AddIndirect                       
+0001145a  __TI_auto_init_nobinit_nopinit_hold_wdt
+000114ae  Buffer_uint16                          
+00011500  SetVcoreUp                             
+0001154e  UART_Tx_Handler                        
+0001159c  Task_Schedule                          
+000115e6  main                                   
+00011670  Buffer_Dequeue                         
+000116ae  UART_Rx_Handler                        
+000116ec  __mspabi_slll_15                       
+000116f0  __mspabi_slll_14                       
+000116f4  __mspabi_slll_13                       
+000116f8  __mspabi_slll_12                       
+000116fc  __mspabi_slll_11                       
+00011700  __mspabi_slll_10                       
+00011704  __mspabi_slll_9                        
+00011708  __mspabi_slll_8                        
+0001170c  __mspabi_slll_7                        
+00011710  __mspabi_slll_6                        
+00011714  __mspabi_slll_5                        
+00011718  __mspabi_slll_4                        
+0001171c  __mspabi_slll_3                        
+00011720  __mspabi_slll_2                        
+00011724  __mspabi_slll_1                        
+0001172a  __mspabi_srll_15                       
+0001172e  __mspabi_srll_14                       
+00011732  __mspabi_srll_13                       
+00011736  __mspabi_srll_12                       
+0001173a  __mspabi_srll_11                       
+0001173e  __mspabi_srll_10                       
+00011742  __mspabi_srll_9                        
+00011746  __mspabi_srll_8                        
+0001174a  __mspabi_srll_7                        
+0001174e  __mspabi_srll_6                        
+00011752  __mspabi_srll_5                        
+00011756  __mspabi_srll_4                        
+0001175a  __mspabi_srll_3                        
+0001175e  __mspabi_srll_2                        
+00011762  __mspabi_srll_1                        
+0001179c  Task_Queue                             
+000117ce  UART_printf                            
+00011800  Buffer_Init                            
+0001182a  Buffer_int32                           
+0001187c  __TI_zero_init                         
+000118a0  hal_UART_TxInterruptEnabled            
+000118c4  Buffer_int16                           
+000118e6  List_GetFirst                          
+00011906  hal_UART_DataAvailable                 
+00011926  hal_UART_SpaceAvailable                
+00011946  List_Remove                            
+00011964  Timing_Init                            
+00011982  hal_UART_RxByte                        
+0001199e  printADCValue                          
+000119ba  Buffer_Str                             
+000119ee  List_GetNext                           
+00011a06  hal_Timing_Init                        
+00011a1e  __mspabi_mpyi_f5hw                     
+00011a36  ADC_Init                               
+00011a4c  hal_ADC_Init                           
+00011a62  hal_UART_ClearRxIF                     
+00011a78  hal_UART_Disable                       
+00011a8e  hal_UART_DisableTxInterrupt            
+00011aa4  hal_UART_Enable                        
+00011aba  hal_UART_EnableRxInterrupt             
+00011ad0  hal_UART_EnableTxInterrupt             
+00011ae6  hal_UART_TxByte                        
+00011afc  __mspabi_divu                          
+00011afc  __mspabi_remu                          
+00011b12  Timing_Roll                            
+00011b26  memcpy                                 
+00011b3a  __TI_decompress_none                   
+00011b5a  List_UnlinkFirst                       
+00011b66  TimeNow                                
+00011b70  __mspabi_slli                          
+00011b7a  List_SetIdentifyFunction               
+00011b80  List_SetSortFunction                   
+00011b86  C$$EXIT                                
+00011b86  abort                                  
+00011b8c  Buffer_GetSize                         
+00011b90  _system_pre_init                       
+00011b94  _system_post_cinit                     
 ffffffff  __TI_pprof_out_hndl                    
 ffffffff  __TI_prof_data_size                    
 ffffffff  __TI_prof_data_start                   
 ffffffff  __c_args__                             
 
-[928 symbols]
+[908 symbols]
