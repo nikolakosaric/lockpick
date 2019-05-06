@@ -5,13 +5,6 @@
 SHELL = cmd.exe
 
 # Each subdirectory must supply rules for building sources it contributes
-adc.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/src/adc.c $(GEN_OPTS) | $(GEN_HDRS)
-	@echo 'Building file: "$<"'
-	@echo 'Invoking: MSP430 Compiler'
-	"C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.2.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/nikol/Documents/Spring 2018/Embedded Softwares/Embedded Softwares Fork/include" --include_path="C:/Users/nikol/Documents/Spring 2018/Embedded Softwares/Embedded Softwares Fork/hal/MSP430/MSP430F5529" --include_path="C:/Users/nikol/Documents/Spring 2018/Embedded Softwares/lockpick" --include_path="C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.2.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="adc.d_raw" $(GEN_OPTS__FLAG) "$<"
-	@echo 'Finished building: "$<"'
-	@echo ' '
-
 buffer.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/src/buffer.c $(GEN_OPTS) | $(GEN_HDRS)
 	@echo 'Building file: "$<"'
 	@echo 'Invoking: MSP430 Compiler'
@@ -23,13 +16,6 @@ buffer_printf.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Emb
 	@echo 'Building file: "$<"'
 	@echo 'Invoking: MSP430 Compiler'
 	"C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.2.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/nikol/Documents/Spring 2018/Embedded Softwares/Embedded Softwares Fork/include" --include_path="C:/Users/nikol/Documents/Spring 2018/Embedded Softwares/Embedded Softwares Fork/hal/MSP430/MSP430F5529" --include_path="C:/Users/nikol/Documents/Spring 2018/Embedded Softwares/lockpick" --include_path="C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.2.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="buffer_printf.d_raw" $(GEN_OPTS__FLAG) "$<"
-	@echo 'Finished building: "$<"'
-	@echo ' '
-
-hal_adc.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/hal/MSP430/MSP430F5529/hal_adc.c $(GEN_OPTS) | $(GEN_HDRS)
-	@echo 'Building file: "$<"'
-	@echo 'Invoking: MSP430 Compiler'
-	"C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.2.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/nikol/Documents/Spring 2018/Embedded Softwares/Embedded Softwares Fork/include" --include_path="C:/Users/nikol/Documents/Spring 2018/Embedded Softwares/Embedded Softwares Fork/hal/MSP430/MSP430F5529" --include_path="C:/Users/nikol/Documents/Spring 2018/Embedded Softwares/lockpick" --include_path="C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.2.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="hal_adc.d_raw" $(GEN_OPTS__FLAG) "$<"
 	@echo 'Finished building: "$<"'
 	@echo ' '
 

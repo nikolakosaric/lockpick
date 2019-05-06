@@ -26,11 +26,6 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>adc.c</name>
-			<type>1</type>
-			<locationURI>EMBEDDED_SOFTWARE/src/adc.c</locationURI>
-		</link>
-		<link>
 			<name>buffer.c</name>
 			<type>1</type>
 			<locationURI>EMBEDDED_SOFTWARE/src/buffer.c</locationURI>
@@ -39,11 +34,6 @@
 			<name>buffer_printf.c</name>
 			<type>1</type>
 			<locationURI>EMBEDDED_SOFTWARE/src/buffer_printf.c</locationURI>
-		</link>
-		<link>
-			<name>hal_adc.c</name>
-			<type>1</type>
-			<locationURI>EMBEDDED_SOFTWARE/hal/MSP430/MSP430F5529/hal_adc.c</locationURI>
 		</link>
 		<link>
 			<name>hal_uart.c</name>

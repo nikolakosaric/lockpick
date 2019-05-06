@@ -17,19 +17,17 @@ main.obj: ../project_settings.h
 main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/library.h
 main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/macros.h
 main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/int_def.h
-main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/hal/MSP430/MSP430F5529/hal_adc.h
 main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/hal/MSP430/MSP430F5529/hal_uart.h
-main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/adc.h
-main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/task.h
-main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/timing.h
-main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/hal/MSP430/MSP430F5529/hal_general.h
 main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/subsystem.h
 main.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.2.LTS/include/stdarg.h
 main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/uart.h
 main.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.2.LTS/include/stdbool.h
 main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/subsystem.h
+main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/task.h
+main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/timing.h
 main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/buffer_printf.h
 main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/buffer.h
+main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/hal/MSP430/MSP430F5529/hal_general.h
 
 ../main.c: 
 C:/ti/ccsv8/ccs_base/msp430/include/msp430.h: 
@@ -48,16 +46,14 @@ C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.2.LTS/include/sys/_stdint.h:
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/library.h: 
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/macros.h: 
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/int_def.h: 
-C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/hal/MSP430/MSP430F5529/hal_adc.h: 
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/hal/MSP430/MSP430F5529/hal_uart.h: 
-C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/adc.h: 
-C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/task.h: 
-C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/timing.h: 
-C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/hal/MSP430/MSP430F5529/hal_general.h: 
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/subsystem.h: 
 C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.2.LTS/include/stdarg.h: 
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/uart.h: 
 C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.2.LTS/include/stdbool.h: 
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/subsystem.h: 
+C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/task.h: 
+C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/timing.h: 
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/buffer_printf.h: 
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/buffer.h: 
+C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/hal/MSP430/MSP430F5529/hal_general.h: 

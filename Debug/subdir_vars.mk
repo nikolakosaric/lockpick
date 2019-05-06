@@ -9,10 +9,8 @@ CMD_SRCS += \
 ../lnk_msp430f5529.cmd 
 
 C_SRCS += \
-C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/src/adc.c \
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/src/buffer.c \
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/src/buffer_printf.c \
-C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/hal/MSP430/MSP430F5529/hal_adc.c \
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/hal/MSP430/MSP430F5529/hal_uart.c \
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/src/list.c \
 ../main.c \
@@ -22,10 +20,8 @@ C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ F
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/src/uart.c 
 
 C_DEPS += \
-./adc.d \
 ./buffer.d \
 ./buffer_printf.d \
-./hal_adc.d \
 ./hal_uart.d \
 ./list.d \
 ./main.d \
@@ -35,10 +31,8 @@ C_DEPS += \
 ./uart.d 
 
 OBJS += \
-./adc.obj \
 ./buffer.obj \
 ./buffer_printf.obj \
-./hal_adc.obj \
 ./hal_uart.obj \
 ./list.obj \
 ./main.obj \
@@ -48,10 +42,8 @@ OBJS += \
 ./uart.obj 
 
 OBJS__QUOTED += \
-"adc.obj" \
 "buffer.obj" \
 "buffer_printf.obj" \
-"hal_adc.obj" \
 "hal_uart.obj" \
 "list.obj" \
 "main.obj" \
@@ -61,10 +53,8 @@ OBJS__QUOTED += \
 "uart.obj" 
 
 C_DEPS__QUOTED += \
-"adc.d" \
 "buffer.d" \
 "buffer_printf.d" \
-"hal_adc.d" \
 "hal_uart.d" \
 "list.d" \
 "main.d" \
@@ -74,10 +64,8 @@ C_DEPS__QUOTED += \
 "uart.d" 
 
 C_SRCS__QUOTED += \
-"C:/Users/nikol/Documents/Spring 2018/Embedded Softwares/Embedded Softwares Fork/src/adc.c" \
 "C:/Users/nikol/Documents/Spring 2018/Embedded Softwares/Embedded Softwares Fork/src/buffer.c" \
 "C:/Users/nikol/Documents/Spring 2018/Embedded Softwares/Embedded Softwares Fork/src/buffer_printf.c" \
-"C:/Users/nikol/Documents/Spring 2018/Embedded Softwares/Embedded Softwares Fork/hal/MSP430/MSP430F5529/hal_adc.c" \
 "C:/Users/nikol/Documents/Spring 2018/Embedded Softwares/Embedded Softwares Fork/hal/MSP430/MSP430F5529/hal_uart.c" \
 "C:/Users/nikol/Documents/Spring 2018/Embedded Softwares/Embedded Softwares Fork/src/list.c" \
 "../main.c" \
