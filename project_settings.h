@@ -10,8 +10,14 @@
 
 #define FCPU 24000000
 
+#define USE_SPI_A0
+#define SPI_MAX_SIZE 33
+#define THIEF_SPI SPI_A0
+#define THIEF_BRAINFRAME_NETWORK
+
+#define USE_UART1
 #define SUBSYS_UART UART1
-#define SUBSYSTEM_UART UART1
+
 
 // include the library header
 #include "library.h"
@@ -21,9 +27,11 @@
 #define USE_MODULE_SUBSYSTEM
 #define USE_MODULE_BUFFER_PRINTF
 
-#define UART1_TX_BUFFER_LENGTH 512
+#define SUBSYSTEM_UART 1  // UART1 is the application UART
 
-#define USE_UART1
+#define UART0_TX_BUFFER_LENGTH 512
+
+#define USE_UART0
 
 #define TASK_MAX_LENGTH 50
 

@@ -26,6 +26,11 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>adc.c</name>
+			<type>1</type>
+			<locationURI>EMBEDDED_SOFTWARE/src/adc.c</locationURI>
+		</link>
+		<link>
 			<name>buffer.c</name>
 			<type>1</type>
 			<locationURI>EMBEDDED_SOFTWARE/src/buffer.c</locationURI>
@@ -36,6 +41,11 @@
 			<locationURI>EMBEDDED_SOFTWARE/src/buffer_printf.c</locationURI>
 		</link>
 		<link>
+			<name>hal_adc.c</name>
+			<type>1</type>
+			<locationURI>EMBEDDED_SOFTWARE/hal/MSP430/MSP430F5529/hal_adc.c</locationURI>
+		</link>
+		<link>
 			<name>hal_uart.c</name>
 			<type>1</type>
 			<locationURI>EMBEDDED_SOFTWARE/hal/MSP430/MSP430F5529/hal_uart.c</locationURI>
@@ -44,6 +54,11 @@
 			<name>list.c</name>
 			<type>1</type>
 			<locationURI>EMBEDDED_SOFTWARE/src/list.c</locationURI>
+		</link>
+		<link>
+			<name>random_int.c</name>
+			<type>1</type>
+			<locationURI>EMBEDDED_SOFTWARE/src/random_int.c</locationURI>
 		</link>
 		<link>
 			<name>subsystem.c</name>

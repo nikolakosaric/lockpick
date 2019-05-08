@@ -10,11 +10,16 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./LED_matrix.obj" \
+"./adc.obj" \
 "./buffer.obj" \
 "./buffer_printf.obj" \
+"./hal_adc.obj" \
 "./hal_uart.obj" \
 "./list.obj" \
+"./lockpick.obj" \
 "./main.obj" \
+"./random_int.obj" \
 "./subsystem.obj" \
 "./task.obj" \
 "./timing.obj" \
@@ -163,8 +168,8 @@ lockpick.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "buffer.obj" "buffer_printf.obj" "hal_uart.obj" "list.obj" "main.obj" "subsystem.obj" "task.obj" "timing.obj" "uart.obj" 
-	-$(RM) "buffer.d" "buffer_printf.d" "hal_uart.d" "list.d" "main.d" "subsystem.d" "task.d" "timing.d" "uart.d" 
+	-$(RM) "LED_matrix.obj" "adc.obj" "buffer.obj" "buffer_printf.obj" "hal_adc.obj" "hal_uart.obj" "list.obj" "lockpick.obj" "main.obj" "random_int.obj" "subsystem.obj" "task.obj" "timing.obj" "uart.obj" 
+	-$(RM) "LED_matrix.d" "adc.d" "buffer.d" "buffer_printf.d" "hal_adc.d" "hal_uart.d" "list.d" "lockpick.d" "main.d" "random_int.d" "subsystem.d" "task.d" "timing.d" "uart.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

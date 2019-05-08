@@ -28,6 +28,11 @@ main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ So
 main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/buffer_printf.h
 main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/buffer.h
 main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/hal/MSP430/MSP430F5529/hal_general.h
+main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/adc.h
+main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/hal/MSP430/MSP430F5529/hal_adc.h
+main.obj: ../lockpick.h
+main.obj: C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/random_int.h
+main.obj: ../LED_matrix.h
 
 ../main.c: 
 C:/ti/ccsv8/ccs_base/msp430/include/msp430.h: 
@@ -57,3 +62,8 @@ C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ F
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/buffer_printf.h: 
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/buffer.h: 
 C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/hal/MSP430/MSP430F5529/hal_general.h: 
+C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/adc.h: 
+C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/hal/MSP430/MSP430F5529/hal_adc.h: 
+../lockpick.h: 
+C:/Users/nikol/Documents/Spring\ 2018/Embedded\ Softwares/Embedded\ Softwares\ Fork/include/random_int.h: 
+../LED_matrix.h: 

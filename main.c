@@ -6,17 +6,18 @@
 #include "task.h"
 #include "uart.h"
 #include "hal_general.h"
+#include "adc.h"
+#include "hal_adc.h"
+
+#include "lockpick.h"
+#include "LED_matrix.h"
 
 void SetClk24MHz(void);
 void SetVcoreUp(unsigned int level);
 
-int A0 = 0;
-int A1 = 0;
-int A2 = 0;
-int A3 = 0;
-int A4 = 0;
+void printADCValue(uint16_t ADCval, void *);
 
-void Initialize_ADC(void);
+uint8_t error;
 
 int main(void)
 {
@@ -26,18 +27,37 @@ int main(void)
 
     DisableInterrupts();
 
-    //Timing_Init();
     Task_Init();
+
     UART_Init(SUBSYSTEM_UART);
     UART_ReconfigureBaud(SUBSYSTEM_UART, 9600);
-    Initialize_ADC();
+
+    ADC_Init();
+    ADC_AddChannel(ADC0, 250, printADCValue, 0);
+
+    LED_Matrix_Init();
+
+    tumbler = 1;
+    Tumbler_Values();
 
     EnableInterrupts();
+
+    error = Lockpick_Arm(100);
 
     while (1)
     {
         SystemTick();
     }
+}
+
+void printADCValue(uint16_t ADCval, void * tempPointer)
+{
+    uint16_t tumbler_val = Tumbler_Value(tumbler);
+    Subsystem_printf("Tumbler: %u\r\n", tumbler);
+    Subsystem_printf("ADC Value: %u\r\n", ADCval);
+    Subsystem_printf("Tumbler Value: %u\r\n", tumbler_val);
+    tumbler = Check_Tumbler_Position(ADCval, tumbler_val, tumbler, error);
+    Draw_Tumblers(tumbler);
 }
 
 void SetClk24MHz()
@@ -117,78 +137,3 @@ void SetVcoreUp(unsigned int level)
     // Lock PMM registers for write access
     PMMCTL0_H = 0x00;
 }
-
-void Initialize_ADC()
-{
-    P6SEL = 0x1F;                             // Enable A/D channel inputs
-    ADC12CTL0 = ADC12ON + ADC12MSC + ADC12SHT0_8; // Turn on ADC12, extend sampling time
-                                                  // to avoid overflow of results
-    ADC12CTL1 = ADC12SHP + ADC12CONSEQ_3; // Use sampling timer, repeated sequence
-    ADC12MCTL0 = ADC12INCH_0;                 // ref+=AVcc, channel = A0
-    ADC12MCTL1 = ADC12INCH_1;                 // ref+=AVcc, channel = A1
-    ADC12MCTL2 = ADC12INCH_2;                 // ref+=AVcc, channel = A2
-    ADC12MCTL3 = ADC12INCH_3;                 // ref+=AVcc, channel = A3
-    ADC12MCTL4 = ADC12INCH_4 + ADC12EOS;    // ref+=AVcc, channel = A4, end seq.
-    ADC12IE = 0x10;                           // Enable ADC12IFG.4
-    ADC12CTL0 |= ADC12ENC;                    // Enable conversions
-    ADC12CTL0 |= ADC12SC;                     // Start convn - software trigger
-
-}
-
-#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
-#pragma vector=ADC12_VECTOR
-__interrupt void ADC12ISR(void)
-#elif defined(__GNUC__)
-void __attribute__ ((interrupt(ADC12_VECTOR))) ADC12ISR (void)
-#else
-#error Compiler not supported!
-#endif
-{
-    switch (__even_in_range(ADC12IV, 34))
-    {
-    case 0:
-        break;                           // Vector  0:  No interrupt
-    case 2:
-        break;                           // Vector  2:  ADC overflow
-    case 4:
-        break;                           // Vector  4:  ADC timing overflow
-    case 6:
-        break;                           // Vector  6:  ADC12IFG0
-    case 8:
-        break;                           // Vector  8:  ADC12IFG1
-    case 10:
-        break;                           // Vector 10:  ADC12IFG2
-    case 12:
-        break;                           // Vector 12:  ADC12IFG3
-    case 14:                                  // Vector 14:  ADC12IFG4
-        A0 = ADC12MEM0;
-        A1 = ADC12MEM1;
-        A2 = ADC12MEM2;
-        A3 = ADC12MEM3;
-        A4 = ADC12MEM4;
-        break;
-    case 16:
-        break;                           // Vector 16:  ADC12IFG5
-    case 18:
-        break;                           // Vector 18:  ADC12IFG6
-    case 20:
-        break;                           // Vector 20:  ADC12IFG7
-    case 22:
-        break;                           // Vector 22:  ADC12IFG8
-    case 24:
-        break;                           // Vector 24:  ADC12IFG9
-    case 26:
-        break;                           // Vector 26:  ADC12IFG10
-    case 28:
-        break;                           // Vector 28:  ADC12IFG11
-    case 30:
-        break;                           // Vector 30:  ADC12IFG12
-    case 32:
-        break;                           // Vector 32:  ADC12IFG13
-    case 34:
-        break;                           // Vector 34:  ADC12IFG14
-    default:
-        break;
-    }
-}
-
